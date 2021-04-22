@@ -88,7 +88,7 @@ def base(response, id):
 
 
 def home(response):
-    return render(response, "main/home.html", {})
+    return render(response, "registration/login.html", {})
 
 
 def create(response):
