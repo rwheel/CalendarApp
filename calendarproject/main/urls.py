@@ -8,6 +8,5 @@ urlpatterns = [
     path("home/", views.home, name="home"),
     path("create/", views.create, name="create"),
     path("view/", views.view, name="view"),
-    # path('', include("calendarapp.urls")),
     path('logout/', authentication_views.LogoutView.as_view(template_name='main/home.html'), name='logout'),
 ]
