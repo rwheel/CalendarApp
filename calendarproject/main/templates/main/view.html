@@ -5,8 +5,8 @@
 {% endblock %}
 
 {% block content %}
-	<h3>Your To Do Lists, click to edit</h3>
+	<h3>Your To Do Lists, Click To Edit</h3>
     {% for td in user.todolist.all %}
-        <p><a href="/{{ td.id }}">{{ td.name }}</a></p>
+        <p><a style="font-size:20px;"href="/{{ td.id }}">{{ td.name }}</a></p>
     {% endfor %}
 {% endblock %}
