@@ -7,7 +7,7 @@ from .models import ToDoList, Item
 import calendar
 from datetime import timedelta
 from datetime import datetime, date
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from django.views import generic
 from django.utils.safestring import mark_safe
@@ -88,7 +88,7 @@ def base(response, id):
 
 
 def home(response):
-    return render(response, "registration/login.html", {})
+    return redirect("login")
 
 
 def create(response):

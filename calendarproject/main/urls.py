@@ -10,7 +10,7 @@ urlpatterns = [
     path("home/", views.home, name="home"),
     path("create/", views.create, name="create"),
     path("view/", views.view, name="view"),
-    path('logout/', authentication_views.LogoutView.as_view(template_name='main/home.html'), name='logout'),
+    path('logout/', authentication_views.LogoutView.as_view(template_name='main/logout.html'), name='logout'),
     url('index', views.index, name='index'),
     url('calendar/', views.CalendarView.as_view(), name='calendar'),
     url('event/new/', views.event, name='event_new'),
