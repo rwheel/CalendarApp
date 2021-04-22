@@ -38,8 +38,6 @@ INSTALLED_APPS = [
     "crispy_forms",
     'main.apps.MainConfig',
     'register.apps.RegisterConfig',
-    'calendarapp.apps.CalendarappConfig',
-
 ]
 
 MIDDLEWARE = [
