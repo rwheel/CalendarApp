@@ -73,8 +73,10 @@ def base(response, id):
             for item in ls.item_set.all():
                 if response.POST.get("c" + str(item.id)) == "clicked":
                     item.complete = True
+                    item.save()
                 else:
                     item.complete = False
+                    item.save()
 
         elif response.POST.get("newItem"):
             txt = response.POST.get("new")

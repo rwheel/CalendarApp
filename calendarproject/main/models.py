@@ -4,6 +4,7 @@ from django.urls import reverse
 
 
 class Event(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=200)
     description = models.TextField()
     start_time = models.DateTimeField()

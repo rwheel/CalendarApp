@@ -12,7 +12,7 @@ urlpatterns = [
     path("view/", views.view, name="view"),
     path('logout/', authentication_views.LogoutView.as_view(template_name='main/home.html'), name='logout'),
     url('index', views.index, name='index'),
-    url('calendar', views.CalendarView.as_view(), name='calendar'),
+    url('calendar/', views.CalendarView.as_view(), name='calendar'),
     url('event/new/', views.event, name='event_new'),
     url('event/edit/(?P<event_id>\d+)/', views.event, name='event_edit'),
 ]
