@@ -5,8 +5,24 @@
 {% endblock %}
 
 {% block content %}
-	<h3>Your To Do Lists, Click To Edit</h3>
+
+
+	<h3>Your To Do Lists, click to edit</h3>
+<form method="post" action="#">
+     {% csrf_token %}
     {% for td in user.todolist.all %}
-        <p><a style="font-size:20px;"href="/{{ td.id }}">{{ td.name }}</a></p>
+        {% if not delete %}
+              <div class = "input-group mb-3">
+                <p><a  style="margin-right: 10px" href="/{{ td.id }}">{{ td.name }}</a><input style="height: 15px; width: 15px" type="checkbox", value="clicked", name="c{{ item.id }}"></p>
+            </div>
+        {% endif %}
     {% endfor %}
+      <div class = "input-group mb-3">
+          <button type="submit", name="delete", id="delete" value="{{user.id}}" class = "btn btn-info left" style="outline: none; color: #FFC20A; box-shadow: 0 0 0 0; margin-left: 10px; background-color:#0C7BDC;">Delete checked lists</button>
+    </div>
+</form>
+
+
 {% endblock %}
+
+

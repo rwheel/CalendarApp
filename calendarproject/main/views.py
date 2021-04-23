@@ -1,3 +1,4 @@
+from django.contrib.auth import authenticate
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 
@@ -109,8 +110,12 @@ def create(response):
     return render(response, "main/create.html", {"form": form})
 
 
-def view(response):
-    return render(response, "main/view.html", {})
+def view(request):
+    delete = True
+    delete = request.POST.get('delete', '')
+
+    return render(request, "main/view.html", {"delete":delete})
+
 
 
 
